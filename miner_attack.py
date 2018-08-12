@@ -7,14 +7,14 @@ import socket
 from multiprocessing import Process
 
 def get_auth(ip, username, password):
-	url_top = 'http://' + ip
+	url_top = 'http://{}'.format(ip)
 	realm="antMiner Configuration"
 	auth = urllib2.HTTPDigestAuthHandler()
 	auth.add_password(realm,url_top,username,password)
 	return auth
 
 def get_info(ip, auth):
-	url_status = 'http://'+ ip +'/cgi-bin/minerStatus.cgi'
+	url_status = 'http://{}/cgi-bin/minerStatus.cgi'.format(ip)
 
 	opener = urllib2.build_opener(auth)
 	urllib2.install_opener(opener)
