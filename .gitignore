@@ -1,0 +1,12 @@
+# Python:
+*.py[cod]
+*bak.py
+*.so
+*.egg
+*.egg-info
+
+#Key
+*.pem
+
+# Log:
+*.txt
